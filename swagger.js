@@ -9,6 +9,7 @@ const options = {
       description: 'API Node + Express com autenticação via JWT, usando db.json como banco.',
     },
     servers: [
+      { url: 'https://api-financial-production-1881.up.railway.app', description: 'Produção (Railway)' },
       { url: 'http://localhost:3000', description: 'Servidor local' },
     ],
     components: {
