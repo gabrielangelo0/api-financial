@@ -5,10 +5,10 @@ const authRoutes = require('./routes/auth');
 const swaggerSpec = require('./swagger');
 const cors = require('cors');
 
-const app = express(cors());
+const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use()
+app.use(cors());
 app.use(express.json());
 
 app.get('/', (req, res) => {
