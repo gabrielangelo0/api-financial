@@ -3,10 +3,12 @@ const swaggerUi = require('swagger-ui-express');
 
 const authRoutes = require('./routes/auth');
 const swaggerSpec = require('./swagger');
+const cors = require('cors');
 
-const app = express();
+const app = express(cors());
 const PORT = process.env.PORT || 3000;
 
+app.use()
 app.use(express.json());
 
 app.get('/', (req, res) => {
