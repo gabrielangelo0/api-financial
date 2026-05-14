@@ -54,6 +54,28 @@ const options = {
             user: { $ref: '#/components/schemas/User' },
           },
         },
+        Transaction: {
+          type: 'object',
+          properties: {
+            id: { type: 'integer', example: 5 },
+            title: { type: 'string', example: 'Salario' },
+            amount: { type: 'string', example: '237000' },
+            category: { type: 'string', example: 'Finança' },
+            date: { type: 'string', example: '15/04/2026' },
+            type: { type: 'string', enum: ['entrada', 'saida'], example: 'entrada' },
+          },
+        },
+        TransactionInput: {
+          type: 'object',
+          required: ['title', 'amount', 'category', 'date', 'type'],
+          properties: {
+            title: { type: 'string', example: 'Salario' },
+            amount: { type: 'string', example: '237000' },
+            category: { type: 'string', example: 'Finança' },
+            date: { type: 'string', example: '15/04/2026' },
+            type: { type: 'string', enum: ['entrada', 'saida'], example: 'entrada' },
+          },
+        },
         Error: {
           type: 'object',
           properties: {

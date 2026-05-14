@@ -2,6 +2,7 @@ const express = require('express');
 const swaggerUi = require('swagger-ui-express');
 
 const authRoutes = require('./routes/auth');
+const transactionsRoutes = require('./routes/transactions');
 const swaggerSpec = require('./swagger');
 const cors = require('cors');
 
@@ -19,6 +20,7 @@ app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 app.get('/docs.json', (req, res) => res.json(swaggerSpec));
 
 app.use('/auth', authRoutes);
+app.use('/transactions', transactionsRoutes);
 
 app.use((req, res) => {
   res.status(404).json({ error: 'Rota não encontrada' });
